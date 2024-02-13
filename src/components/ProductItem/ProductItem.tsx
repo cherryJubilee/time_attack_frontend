@@ -13,6 +13,7 @@ type ProductItemProps = {
     originalPrice: number;
     deliveryType: string;
     brand: {
+      id: number;
       nameEn: string;
     };
   };

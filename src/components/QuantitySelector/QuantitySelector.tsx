@@ -8,7 +8,7 @@ type QuantitySelectorProps = {
 
 function QuantitySelector({ count, setCount }: QuantitySelectorProps) {
   const handleQuantityChange = (newCount: number) => {
-    //setCount(Math.max(1, newCount));
+    setCount(Math.max(0, newCount));
     const dispatch = useAppDispatch();
 
     if (newCount === 0) {

@@ -23,7 +23,7 @@ const cartSlice = createSlice({
       }>
     ) {
       const existingItem = state.items.find(
-        (item) => item.product.id === action.payload.product.id
+        (item) => item.product.result.id === action.payload.product.result.id
       );
       if (existingItem) {
         existingItem.count += action.payload.count;
@@ -41,7 +41,7 @@ const cartSlice = createSlice({
       action: PayloadAction<{ productId: string; count: number }>
     ) {
       const item = state.items.find(
-        (item) => item.product.id === action.payload.productId
+        (item) => item.product.result.id === action.payload.productId
       );
       if (item) {
         item.count = action.payload.count;
