@@ -11,8 +11,8 @@ async function ProductPage({
 
   return (
     <Page>
-      <div className="flex justify-between my-20 mx-20">
-        <section className="relative w-1/2 h-80 mt-4 mr-3">
+      <div className="grid grid-cols-2 gap-x-6 h-screen mx-32 my-20">
+        <section className="relative mt-4 mr-3">
           <Image
             src={product.result.imgSrc}
             alt={product.result.name}
@@ -21,35 +21,35 @@ async function ProductPage({
             className="object-cover"
           />
         </section>
-        <section className="w-1/2 ml-3">
-          <div>
+        <section className="ml-3">
+          <div className="my-2">
             <span className="font-bold">{product.result.brand.nameKr}</span>
             <span className="mx-1">/</span>
             <span className="font-bold">{product.result.brand.nameEn}</span>
           </div>
           <hr></hr>
           <div>
-            <div className="text-sm">{product.result.name} </div>
+            <div className="my-2">{product.result.name} </div>
           </div>
-          <div className="flex justify-start my-3 items-center">
+          <div className="flex justify-start my-5 items-center">
             <h4 className="font-bold w-24">정가</h4>
             <div className=" text-red-500 line-through">
               ₩{product.result.originalPrice.toLocaleString("ko-KR")}
             </div>
           </div>
           <div className="flex items-center">
-            <h4 className="font-bold w-24  my-3">판매가</h4>
+            <h4 className="font-bold w-24  my-5">판매가</h4>
             <div>₩{product.result.price.toLocaleString("ko-KR")}</div>
           </div>
           <div className="flex items-center">
-            <h4 className="font-bold w-24  my-3">배송</h4>
+            <h4 className="font-bold w-24  my-5">배송</h4>
             <div>{product.result.deliveryType}</div>
           </div>
           <div className="flex items-center">
-            <h4 className="font-bold	w-24  my-3">잔여재고</h4>
+            <h4 className="font-bold	w-24  my-5">잔여재고</h4>
             <div>{product.result.onlineStock}</div>
           </div>
-          <button className="bg-black text-white px-4 py-2 text-sm w-full">
+          <button className="bg-black text-white px-4 py-3 text-sm w-full my-5">
             장바구니에 담기
           </button>
         </section>
