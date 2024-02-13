@@ -1,10 +1,3 @@
-// - getProducts: 전체 상품 목록을 제공합니다.
-//     - path: `/products`
-//     - method: `GET`
-// - getProduct: 특정 상품의 정보를 제공합니다.
-//     - path: `/products/:productId`
-//     - method: `GET`
-
 import axios from "axios";
 
 export async function getProducts() {

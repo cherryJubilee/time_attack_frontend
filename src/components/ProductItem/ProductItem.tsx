@@ -26,13 +26,13 @@ function ProductItem({ product }: ProductItemProps) {
         href={`/products/${product.id}`}
         className="flex flex-col items-left"
       >
-        <div className="relative w-52 h-80 mt-4">
+        <div className="relative w-52 h-80 mt-4 ">
           <Image
             src={product.imgSrc}
             alt={product.name}
             fill
             unoptimized
-            className="object-cover"
+            className="object-cover lg:hover:scale-110 transition-transform ease-in-out duration-500"
           />
         </div>
         <div className="text-xs font-bold	mt-4 mb-2">{product.brand.nameEn}</div>

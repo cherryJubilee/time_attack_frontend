@@ -4,27 +4,25 @@ import { getProduct } from "@/api/product.api";
 import { addItemToCart } from "@/redux/slice/cart.slice";
 import { useAppDispatch } from "@/redux/store";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 async function ProductPage({
   params: { productId },
 }: {
   params: { productId: string };
 }) {
-  const router = useRouter();
   const dispatch = useAppDispatch();
   const product = await getProduct(productId);
   const handleClickBtn = () => {
     if (product) {
       dispatch(addItemToCart({ product, count: 1 }));
-      router.replace("/cart");
+      alert("장바구니에 추가되었습니다");
     }
   };
 
   return (
     <Page>
       <div className="grid grid-cols-2 gap-x-6 h-screen mx-32 my-20">
-        <section className="relative mt-4 mr-3">
+        <section className="relative mr-3">
           <Image
             src={product.result.imgSrc}
             alt={product.result.name}
@@ -62,7 +60,7 @@ async function ProductPage({
             <div>{product.result.onlineStock}</div>
           </div>
           <button
-            className="bg-black text-white px-4 py-3 text-sm w-full my-5"
+            className="bg-black text-white px-4 py-3 text-sm w-full my-5 lg:hover:scale-110 transition-transform ease-in-out duration-200"
             onClick={handleClickBtn}
           >
             장바구니에 담기
