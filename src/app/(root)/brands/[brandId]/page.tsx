@@ -1,4 +1,4 @@
-import { getProduct } from "@/api/brand.api";
+import { getBrand } from "@/api/brand.api";
 import Page from "@/Page";
 
 async function BrandPage({
@@ -6,7 +6,7 @@ async function BrandPage({
 }: {
   params: { brandId: string };
 }) {
-  const brand = await getProduct(brandId);
+  const brand = await getBrand(brandId);
 
   return <Page>브랜드 별 페이지</Page>;
 }

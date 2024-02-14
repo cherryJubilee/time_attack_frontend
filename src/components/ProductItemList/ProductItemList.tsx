@@ -12,7 +12,7 @@ function ProductItemListPage({ title, products }: ProductItemListProps) {
       <h3 className="text-2xl font-bold mb-5 text-center mt-14">{title}</h3>
       <ol className="grid grid-cols-4 gap-x-5 gap-y-7">
         {products &&
-          products.result.map((product) => (
+          products.map((product) => (
             <li key={product.id}>
               <ProductItem product={product} />
             </li>

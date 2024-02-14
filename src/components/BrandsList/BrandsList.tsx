@@ -14,7 +14,7 @@ function BrandsListPage({ title, brands }: BrandsListProps) {
       <nav className="max-w-screen-lg mb-16 mx-48">
         <ol className="text-sm grid grid-cols-6 gap-y-5 justify-items-center">
           {brands &&
-            brands.result.map((brand) => (
+            brands.map((brand) => (
               <li
                 key={brand.id}
                 className="text-slate-700 data-[active=true]:text-black data-[active=true]:font-semibold hover:text-black transition-all"

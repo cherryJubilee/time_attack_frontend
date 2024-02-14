@@ -1,6 +1,6 @@
 import { AxiosInstance } from "axios";
-import { LogInDto, LogOutDto, SignUpDto } from "./auth.dto";
-import { LogInData, LogoutData, SignUpData } from "./auth.response";
+import { LogInDto, SignUpDto } from "./auth.dto";
+import { LogInData, SignUpData } from "./auth.response";
 
 class AuthAPI {
   private coreClient: AxiosInstance;
@@ -20,14 +20,6 @@ class AuthAPI {
   signUp = async (dto: SignUpDto) => {
     const url = "/auth/sign-up";
     const response = await this.coreClient.post<SignUpData>(url, dto);
-    const data = response.data;
-
-    return data;
-  };
-
-  logOut = async (dto: LogOutDto) => {
-    const url = "/auth/log-out";
-    const response = await this.coreClient.delete<LogoutData>(url, dto);
     const data = response.data;
 
     return data;
